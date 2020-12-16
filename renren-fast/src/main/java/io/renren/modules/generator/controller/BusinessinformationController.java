@@ -35,7 +35,6 @@ public class BusinessinformationController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("generator:businessinformation:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = businessinformationService.queryPage(params);
 
@@ -47,7 +46,7 @@ public class BusinessinformationController {
      * 信息
      */
     @RequestMapping("/info/{engId}")
-    @RequiresPermissions("generator:businessinformation:info")
+    //@RequiresPermissions("generator:businessinformation:info")
     public R info(@PathVariable("engId") String engId){
 		BusinessinformationEntity businessinformation = businessinformationService.getById(engId);
 
@@ -58,7 +57,7 @@ public class BusinessinformationController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("generator:businessinformation:save")
+    //@RequiresPermissions("generator:businessinformation:save")
     public R save(@RequestBody BusinessinformationEntity businessinformation){
 		businessinformationService.save(businessinformation);
 
@@ -69,7 +68,7 @@ public class BusinessinformationController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("generator:businessinformation:update")
+    //@RequiresPermissions("generator:businessinformation:update")
     public R update(@RequestBody BusinessinformationEntity businessinformation){
 		businessinformationService.updateById(businessinformation);
 
@@ -80,7 +79,7 @@ public class BusinessinformationController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("generator:businessinformation:delete")
+    //@RequiresPermissions("generator:businessinformation:delete")
     public R delete(@RequestBody String[] engIds){
 		businessinformationService.removeByIds(Arrays.asList(engIds));
 
